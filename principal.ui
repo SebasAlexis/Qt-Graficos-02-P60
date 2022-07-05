@@ -63,7 +63,11 @@
          </widget>
         </item>
         <item row="0" column="1">
-         <widget class="QSpinBox" name="spinBox"/>
+         <widget class="QSpinBox" name="inNota1">
+          <property name="maximum">
+           <number>10</number>
+          </property>
+         </widget>
         </item>
         <item row="1" column="0">
          <widget class="QLabel" name="label_2">
@@ -73,7 +77,11 @@
          </widget>
         </item>
         <item row="1" column="1">
-         <widget class="QSpinBox" name="spinBox_2"/>
+         <widget class="QSpinBox" name="inNota2">
+          <property name="maximum">
+           <number>10</number>
+          </property>
+         </widget>
         </item>
         <item row="2" column="0">
          <widget class="QLabel" name="label_3">
@@ -83,16 +91,13 @@
          </widget>
         </item>
         <item row="2" column="1">
-         <widget class="QSpinBox" name="spinBox_3"/>
+         <widget class="QSpinBox" name="inNota3">
+          <property name="maximum">
+           <number>10</number>
+          </property>
+         </widget>
         </item>
        </layout>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="pushButton">
-       <property name="text">
-        <string>Promediar</string>
-       </property>
       </widget>
      </item>
     </layout>
