@@ -104,7 +104,7 @@ void Principal::dibujar()
     int incYN4=this->incY(altoN4);
     painter.drawLine(x+25,incYN4+50,450,incYN4+50);
 
-    // Creando los colores del plano x
+    // Creando los colores del plano cartesiano
     QColor cPlano(35, 211, 187);
 
     // Estableciendo colores al puncel y al painter
@@ -118,7 +118,7 @@ void Principal::dibujar()
     // Creando los colores para numero de intervalo
     QColor cIntervalo(0, 0, 0);
 
-    // Estableciendo colores al puncel y al painter
+    // Estableciendo colores al pincel y al painter
     pincel.setColor(cIntervalo);
     painter.setPen(pincel);
 
@@ -126,13 +126,16 @@ void Principal::dibujar()
 
     for(int i=0;i<=10;i++){
         QString intervalo;
+        int c=0;
         int a=this->getAlto(i);
         int d=this->incY(a);
-        int c=0;
         c=i*10;
         intervalo=QString::number(c);
-        painter.drawText(x-10,d+55,intervalo+"-");
+        painter.drawText(x-10,d+55,intervalo);
     }
+    painter.drawText(x+85,y+475,"Nota 1");
+    painter.drawText(x+205,y+475,"Nota 2");
+    painter.drawText(x+325,y+475,"Nota 3");
 }
 
 int Principal::getAlto(int valor)
