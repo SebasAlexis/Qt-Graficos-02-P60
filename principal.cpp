@@ -31,7 +31,7 @@ void Principal::dibujar()
 
     QPainter painter(&lienzo);
 
-    int x = 0;
+    int x = 15;
     int y = 0;
 
     // Crear un pincel para los bordes
@@ -51,7 +51,7 @@ void Principal::dibujar()
     int incYN1=this->incY(altoN1);
 
     // Dibujar primera barra
-    painter.drawRect(x+50, y+50+incYN1,100,altoN1);
+    painter.drawRect(x+60, y+50+incYN1,100,altoN1);
 
     // Crear un objeto color para el relleno
     QColor colorRelleno(77,156,89);
@@ -73,7 +73,7 @@ void Principal::dibujar()
     int incYN2=this->incY(altoN2);
 
     // Dibujar segunda barra
-    painter.drawRect(x+170, y+50+incYN2, 100, altoN2);
+    painter.drawRect(x+180, y+50+incYN2, 100, altoN2);
 
     // Creando los colores de la tercera barra
     QColor cRellenoBarra3(229, 166, 89);
@@ -90,11 +90,30 @@ void Principal::dibujar()
     int incYN3=this->incY(altoN3);
 
     // Dibujar tercera barra
-    painter.drawRect(x+290,y+50+incYN3,100,altoN3);
+    painter.drawRect(x+300,y+50+incYN3,100,altoN3);
 
-    int prom1=promedio(altoN1,altoN2,altoN3);
-    int prom2=promedio(incYN1,incYN2,incYN3);
-    painter.drawLine(0,prom1,500,prom2);
+    //Creando los colores del plano
+    QColor cProm(0, 0, 0);
+
+    // Estableciendo colores al puncel y al painter
+    pincel.setColor(cProm);
+    painter.setPen(pincel);
+
+    float prom1=promedio(nota1,nota2,nota3);
+    int altoN4=this->getAlto(prom1);
+    int incYN4=this->incY(altoN4);
+    painter.drawLine(x+25,incYN4+50,450,incYN4+50);
+
+    // Creando los colores del plano x
+    QColor cPlano(35, 211, 187);
+
+    // Estableciendo colores al puncel y al painter
+    pincel.setColor(cPlano);
+    painter.setPen(pincel);
+
+    // Dibujar plano
+    painter.drawLine(x+25,y+450,450,450);
+    painter.drawLine(x+25,y+15,x+25,450);
 }
 
 int Principal::getAlto(int valor)
