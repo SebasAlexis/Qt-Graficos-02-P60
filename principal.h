@@ -43,12 +43,6 @@ private:
 
 
 
-
-
-
-
-
-
     int promedio(int n1,int n2,int n3);
 };
 #endif // PRINCIPAL_H

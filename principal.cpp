@@ -114,6 +114,25 @@ void Principal::dibujar()
     // Dibujar plano
     painter.drawLine(x+25,y+450,450,450);
     painter.drawLine(x+25,y+15,x+25,450);
+
+    // Creando los colores para numero de intervalo
+    QColor cIntervalo(0, 0, 0);
+
+    // Estableciendo colores al puncel y al painter
+    pincel.setColor(cIntervalo);
+    painter.setPen(pincel);
+
+    //Poner intervalos
+
+    for(int i=0;i<=10;i++){
+        QString intervalo;
+        int a=this->getAlto(i);
+        int d=this->incY(a);
+        int c=0;
+        c=i*10;
+        intervalo=QString::number(c);
+        painter.drawText(x-10,d+55,intervalo+"-");
+    }
 }
 
 int Principal::getAlto(int valor)
